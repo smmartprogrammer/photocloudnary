@@ -23,7 +23,7 @@ export default function Home() {
       }} uploadPreset="lkq2yi4m" />
 
       {imageId && (<CldImage
-        width="960"
+        width="96 0"
         height="600"
         src={imageId}
         sizes="100vw"
