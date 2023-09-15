@@ -14,8 +14,12 @@ import {
 import { Menu } from "./Icons/menu"
 import { AddToAlbumDialog } from "./add-to-album-dialogue"
 import { SearchResult } from "@/app/gallery/page"
+import { useState } from "react"
 
 export function ImageMenu({ image }: { image: SearchResult[] }) {
+    const [albumName, setAlbumName] = useState("")
+    
+
     return (
         <div className="absolute top-2 right-2">
             <DropdownMenu>
@@ -25,7 +29,7 @@ export function ImageMenu({ image }: { image: SearchResult[] }) {
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-40">
-                    <DropdownMenuItem asChild>
+                    <DropdownMenuItem asChild onClick={() => setOpen(false)}>
                         {/* <FolderPlus className="mr-2 h-4 w-4" />
                         <span>Add to Album</span> */}
                         <AddToAlbumDialog image={image} />
